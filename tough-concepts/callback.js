@@ -2,16 +2,20 @@
 // This technique allows a function to call another function
 // A callback function can run after another function has finished
 
-function trudo(some) {
-    console.log('3 - started trudo function..')
-    console.log('FINAL VALUE: ' + some + '- samba')
+// LEARN: control flow
+
+let print = console.log
+
+print('1 - calling canda function..')
+
+function trudeauIsLongFunction(v) {
+    print('3 - started trudo function..')
+    print('FINAL VALUE: ' + v)
 }
 
-function canada(num1, num2, trudo) {
-    console.log('2 - started canada function..')
-    let sum = num1 + num2;
-    trudo(sum);
+function canada(num1, num2, cb) {
+    // cb = trudeauIsLongFunction
+    print('2 - started canada function..')
+    cb(num1 + num2);
 }
-console.log('1 - calling canda function..')
-canada(5, 5, trudo);
-
+canada(5, 5, trudeauIsLongFunction);
